@@ -10,6 +10,10 @@ https://github.com/Lisiyuan233/voices_of_the_court_mod.git
 
 本项目已添加对Anime Core Lib（二向箔）的兼容性支持，使2D肖像和纸片人种族能够参与对话系统。
 
+## 排序
+
+请将本mod置于Anime Core Lib下方。
+
 ## 修改内容
 
 ### 1. 动画系统兼容 (`gfx/portraits/portrait_animations/conversation_animations.txt`)
