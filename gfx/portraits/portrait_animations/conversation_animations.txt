@@ -1,4 +1,19 @@
 ﻿conversation_animation = {
+	# 2D肖像支持（Anime Core Lib兼容）
+	# 为2D肖像定义默认动画
+	# Anime Core Lib使用waifu_portrait_trigger来标识2D肖像
+	# 对于2D肖像，使用静态显示（dead动画作为占位符，Anime Core Lib会阻止动画播放）
+	anime_male = {
+		# 2D肖像静态显示
+		# Anime Core Lib会自动阻止3D动画应用到2D肖像
+		# 实际的2D肖像会通过Anime Core Lib的系统正常显示
+		default = { head = "dead" torso = "dead" }
+	}
+	
+	anime_female = anime_male
+	anime_boy = anime_male
+	anime_girl = anime_male
+	
 	male = {
 	
 		default = { head = "AI_rational_entry" torso = "AI_rational_entry" }
@@ -10,6 +25,8 @@
 		armycamp = {
 			animation = { head = "council_marshal" torso = "council_marshal" } 
 			
+			# 兼容Anime Core Lib：portrait_modifier_pack只应用到3D肖像
+			# 由于weight中已有waifu_portrait_trigger = no条件，2D肖像不会触发此动画
 			portrait_modifier_pack = one_handed_sword
 			
 			weight = {
@@ -19,6 +36,8 @@
 					add = 100
 					has_global_variable = talk_scene
 					global_var:talk_scene = flag:talk_scene_armycamp
+					# 只对3D肖像应用场景动画
+					waifu_portrait_trigger = no
 				}
 			}
 		}
@@ -26,6 +45,8 @@
 		hunt = {
 			animation = { head = "hunting_bow_down_entry" torso = "hunting_bow_down_entry" }
 			
+			# 兼容Anime Core Lib：portrait_modifier_pack只应用到3D肖像
+			# 由于weight中已有waifu_portrait_trigger = no条件，2D肖像不会触发此动画
 			portrait_modifier_pack = hunting_shortbow_rest_arrow
 			
 			weight = {
@@ -35,6 +56,8 @@
 					add = 100
 					has_global_variable = talk_scene
 					global_var:talk_scene = flag:talk_scene_hunt
+					# 只对3D肖像应用场景动画
+					waifu_portrait_trigger = no
 				}
 			}
 		}
@@ -42,7 +65,9 @@
 		feast = {
 			animation = { head = "emotion_toast1_entry" torso = "emotion_toast1_entry" }
 			
+			# 兼容Anime Core Lib：portrait_modifier只应用到3D肖像
 			portrait_modifier = {			
+				trigger = { waifu_portrait_trigger = no }
 				animations_props = goblet
 			}
 			
@@ -53,6 +78,8 @@
 					add = 100
 					has_global_variable = talk_scene
 					global_var:talk_scene = flag:talk_scene_feast
+					# 只对3D肖像应用场景动画
+					waifu_portrait_trigger = no
 				}
 			}
 		}
@@ -73,6 +100,8 @@
 					add = 100
 					has_global_variable = talk_pose
 					global_var:talk_pose = flag:test
+					# 只对3D肖像应用测试动画
+					waifu_portrait_trigger = no
 				}
 			}
 
@@ -89,6 +118,8 @@
 					add = 100
 					has_global_variable = talk_pose
 					global_var:talk_pose = flag:idle
+					# 只对3D肖像应用idle动画
+					waifu_portrait_trigger = no
 				}
 			}
 
@@ -97,9 +128,11 @@
 		sad = {
 			animation = { head = "emotion_sadness" torso = "emotion_sadness" }
 		
+			# 兼容Anime Core Lib：portrait_modifier只应用到3D肖像
 			portrait_modifier = {
-			animations = council_steward_decal
-		}
+				trigger = { waifu_portrait_trigger = no }
+				animations = council_steward_decal
+			}
 			
 			weight = {
 				base = 0
@@ -108,6 +141,8 @@
 					add = 100
 					has_global_variable = talk_pose
 					global_var:talk_pose = flag:sad
+					# 只对3D肖像应用情绪动画
+					waifu_portrait_trigger = no
 				}
 			}
 		}
@@ -115,12 +150,12 @@
 		happy = {
 			animation = { head = "emotion_happy" torso = "emotion_happy" }
 			
+			# 兼容Anime Core Lib：portrait_modifier只应用到3D肖像
 			portrait_modifier = {
+				trigger = { waifu_portrait_trigger = no }
 				animations = emotion_happy_decal
 			}
 			
-			
-		
 			weight = {
 				base = 0
 
@@ -128,6 +163,8 @@
 					add = 100
 					has_global_variable = talk_pose
 					global_var:talk_pose = flag:happy
+					# 只对3D肖像应用情绪动画
+					waifu_portrait_trigger = no
 				}
 			}
 			
@@ -144,6 +181,8 @@
 					add = 100
 					has_global_variable = talk_pose
 					global_var:talk_pose = flag:love
+					# 只对3D肖像应用情绪动画
+					waifu_portrait_trigger = no
 				}
 			}
 			
@@ -160,6 +199,8 @@
 					add = 100
 					has_global_variable = talk_pose
 					global_var:talk_pose = flag:pain
+					# 只对3D肖像应用情绪动画
+					waifu_portrait_trigger = no
 				}
 			}
 			
@@ -176,12 +217,14 @@
 					add = 100
 					has_global_variable = talk_pose
 					global_var:talk_pose = flag:worry
+					# 只对3D肖像应用情绪动画
+					waifu_portrait_trigger = no
 				}
 			}
 			
 		}
 		
-		worry = {
+		speaking = {
 			animation = { head = "throneRoom_conversation2_entry" torso = "throneRoom_conversation2_entry" }
 			
 		
@@ -192,6 +235,8 @@
 					add = 100
 					has_global_variable = talk_pose
 					global_var:talk_pose = flag:speaking
+					# 只对3D肖像应用speaking动画
+					waifu_portrait_trigger = no
 				}
 			}
 			

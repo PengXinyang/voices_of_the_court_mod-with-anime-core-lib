@@ -37,8 +37,11 @@
 		size = { 60 20 }
 		raw_text = "exit"
 		
-		onclick = "[ExecuteConsoleCommand('event ckms_meet_event.9002')]"		
-		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets meet_window meet_window_counter')]"		
+		onclick = "[ExecuteConsoleCommand('event ckms_meet_event.9002')]"	
+		onclick = "[ExecuteConsoleCommand('GUI.ClearWidgets meet_window meet_window_counter')]"
+
+
+		
 	}
 	
 	#close window

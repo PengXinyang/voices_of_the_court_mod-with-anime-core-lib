@@ -1,43 +1,62 @@
-# 一些常见问题
+## 项目原地址
 
-## 一、没有弹出对话框
-该mod需要运行额外后端程序，汉化后端程序下载地址：[https://github.com/Lisiyuan233/Voices_of_the_Court1/releases/tag/betaZh](https://github.com/Lisiyuan233/Voices_of_the_Court1/releases/tag/betaZh)，下载下来的exe文件打开后会自动安装。
+https://github.com/Lisiyuan233/voices_of_the_court_mod.git
 
+感谢up的付出！
 
-## 二、api配置问题
-建议使用DeepSeek官方api，在对话模型连接的下拉框中选择`custom(openai-compatible)`页面进行配置：
-- Server URL需要填写：`https://api.deepseek.com/beta`
-- api key填入自己的apikey，可在[https://platform.deepseek.com](https://platform.deepseek.com)申请。
+# Anime Core Lib (二向箔) 兼容性说明
 
-如果有openai和openrouter，也应该都可以使用。
+## 概述
 
+本项目已添加对Anime Core Lib（二向箔）的兼容性支持，使2D肖像和纸片人种族能够参与对话系统。
 
-## 三、安装好后，在后端程序运行的情况下没有弹出对话框
-**解决方法**：需要使用汉化mod才行。
+## 修改内容
 
-安装方法（二选一）：
-1. 将下载下来的汉化mod文件解压后，直接覆盖创意工坊中的原mod文件；
-2. 将解压后的mod文件夹`voices_of_the_court_mod-1.2.1-beta`放入游戏mod文件夹，然后用记事本在`Documents\Paradox Interactive\Crusader Kings III\mod`文件夹中新建一个`voices_of_the_court_mod-1.2.1-beta.mod`文件，内容如下：
-version="1.0"
-tags={
-"Gameplay"
-}
-name="Voices of the Court mcc"
-supported_version="1.13.1"
-path="C:/Users/ 这里是你电脑的用户名 / Documents/Paradox Interactive/Crusader Kings III/mod/voices_of_the_court_mod-1.2.1-beta"
+### 1. 动画系统兼容 (`gfx/portraits/portrait_animations/conversation_animations.txt`)
 
-如果安装开启汉化mod后依然不会弹出对话框，可能是CK3 用户文件夹路径设置不正确，或者是游戏处于铁人模式，改mod在铁人模式下不会生效。
+#### 添加2D肖像动画定义
 
-## 四、打开聊天窗口时，收到一个带有红色文本的错误"TypeError： Cannot read properties of undedined （reading 'playerID'）"
-**解决**：在`Documents\Paradox Interactive\Crusader Kings III`中创建一个名为 `run` 的文件夹，进入创建的文件夹并创建一个名为 `votc.txt` 的文本文件
+- 为`anime_male`、`anime_female`、`anime_boy`、`anime_girl`添加了默认动画定义
+- 2D肖像使用静态显示（dead动画作为占位符，Anime Core Lib会自动阻止动画播放）
 
-## 五、和人物对话时读取不到最近的记忆
-**解决**：  
-1. 原作者后端程序的小bug，下载汉化的后端可解决。  
-2. 还可能是memoery tokens限制，在后端程序的setting/设置页面调整max memory tokens/最大记忆令牌数的大小，调整记忆tokens的大小后要同时调大最大新令牌数，最大新令牌数最好大于最大记忆令牌数。
+#### 阻止3D动画应用到2D肖像
 
-## 六、修改了提示词生成脚本，重新打开后端程序后就还原了
-**解决**：  
-另存一个放在custom文件夹中。
+- 在所有场景动画（armycamp、hunt、feast）中添加了`waifu_portrait_trigger = no`条件
+- 在所有情绪动画（test、idle、sad、happy、love、pain、worry、speaking）中添加了`waifu_portrait_trigger = no`条件
+- 在portrait_modifier中添加了`trigger = { waifu_portrait_trigger = no }`条件，确保道具和修饰只应用到3D肖像
 
+### 2. GUI系统兼容 (`gui/shared/conversation_portraits.gui`)
+
+- 保持使用`Character.GetAnimatedPortrait`，该系统对2D和3D肖像都有效
+- Anime Core Lib的动画系统会自动阻止3D动画应用到2D肖像
+- 2D肖像会通过Anime Core Lib的系统正常显示
+
+## 工作原理
+
+1. **2D肖像识别**：Anime Core Lib使用`waifu_portrait_trigger`来标识2D肖像
+2. **动画阻止**：通过在所有3D动画的weight中添加`waifu_portrait_trigger = no`条件，确保这些动画只应用到3D肖像
+3. **默认显示**：2D肖像使用默认的静态显示（dead动画），Anime Core Lib会阻止动画播放，显示静态2D图片
+
+## 使用要求
+
+- 需要安装Anime Core Lib（二向箔）mod
+- 2D肖像角色必须使用`anime_ethnicity`种族
+- 2D肖像角色必须满足`waifu_portrait_trigger`条件（符合二向箔的mod理论上满足这两条要求）
+
+## 兼容性
+
+- ✅ 兼容Anime Core Lib
+- ✅ 不影响原版3D肖像的显示
+- ✅ 2D肖像和3D肖像可以在同一对话中正常显示
+
+## 注意事项
+
+1. 如果Anime Core Lib未加载，2D肖像相关代码不会执行，不影响原版功能
+2. 2D肖像不会使用场景动画（armycamp、hunt、feast等），只会显示静态图片
+3. 2D肖像不会使用情绪动画（sad、happy、love等），只会显示默认静态图片
+4. 对话系统的其他功能（背景、对话框等）不受影响
+
+## 未来改进
+
+- 可以考虑为2D肖像添加简单的变化（通过切换不同的2D图片）
 

@@ -1,4 +1,7 @@
-mcc_event.9011 = {
+namespace = mcc_decision_event
+
+#家族会议
+mcc_decision_event.9011 = {
 	type = character_event
 	title = "aha"
 	window = fullscreen_event
@@ -24,8 +27,10 @@ mcc_event.9011 = {
 			limit = {
 				is_ai=yes
 				this.house=root.house
-				}
-			save_scope_as=famliy_meeting_temp_scope1
+				this.location = root.location
+				is_imprisoned = no
+				}			
+				save_scope_as=famliy_meeting_temp_scope1
 			#debug_log = "test:test3/;/[THIS.Char.GetID]"
 		}
 
@@ -43,6 +48,7 @@ mcc_event.9011 = {
 				is_ai = yes
 				this.house = root.house
 				this.location = root.location
+				is_imprisoned = no
 				}
 			log_character_v3 = {}
 			#debug_log = "test:test3/;/[THIS.Char.GetID]"
@@ -60,8 +66,63 @@ mcc_event.9011 = {
         gui = "event_window_widget_talk"
         container = "custom_widgets_container"
     }
+}
 
-	#option ={
-	#	name = "debug"
-	#}
+# 内阁会议
+mcc_decision_event.9012 = {
+	type = character_event
+	title = "aha"
+	window = fullscreen_event
+	theme = clipboard_transfer_event_theme
+	desc = talk_event.9001.desc
+	
+	immediate = {
+		set_global_variable = {
+			name = talk_first_scope
+			value = root
+		}
+		set_global_variable = {
+			name = talk_second_scope
+			value = root
+		}
+		every_councillor = {
+			limit = {
+				is_ai=yes
+				this.location = root.location
+          		is_imprisoned = no
+				}
+			save_scope_as=cabinet_meeting_temp_scope1
+			#debug_log = "test:test3/;/[THIS.Char.GetID]"
+		}
+		set_global_variable={
+			name=cabinet_meeting_temp_var
+			value=scope:cabinet_meeting_temp_scope1
+		}
+
+
+		log_gamedata_v4 = {}
+		log_character_v4 = {}
+		
+        every_councillor = {
+		limit = {
+          this.location = root.location
+          is_imprisoned = no
+          }
+			log_character_v4 = {}
+			#debug_log = "test:test3/;/[THIS.Char.GetID]"
+		}
+	}
+
+		
+		#scope:famliy_meeting_temp_scope1={debug_log = "test:test2/;/[THIS.Char.GetID]"}
+		#debug_log = "test:test4/;/[GetGlobalVariable('famliy_meeting_temp_var').Char.GetID] "
+
+
+
+		
+	
+	widget = {
+        gui = "event_window_widget_talk"
+        container = "custom_widgets_container"
+    }
 }

@@ -13,6 +13,10 @@
 			using = portrait_base
 			alwaystransparent = yes
             block "portrait_texture" {
+				# 兼容Anime Core Lib的2D肖像
+				# GetAnimatedPortrait对2D和3D肖像都有效
+				# Anime Core Lib的动画系统会自动阻止3D动画应用到2D肖像
+				# 对于2D肖像，系统会使用静态显示
                 portrait_texture = "[Character.GetAnimatedPortrait(GetIllustration('talk_background').GetEnvironment(GetGlobalVariable('talk_second_scope').GetCharacter), 'conversation_camera2', 'conversation_animation', PdxGetWidgetScreenSize(PdxGuiWidget.Self))]"
             }
             block "mask" {

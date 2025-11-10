@@ -7,10 +7,89 @@
 #		scope:actor.location = scope:recipient.location
 #		scope:actor = {is_imprisoned = no}
 #		scope:recipient = {is_imprisoned = no}
-#		#scope:actor.location.culture = { has_coa_gfx = chinese_group_coa_gfx }
-#		scope:actor.location = { has_building = "sence_name" }
+#		scope:actor.location = { has_building = "building_name" }
 #	}
 #}
+
+#在灵隐寺见面
+can_talk_in_lingyinsi = {
+	AND = {
+		scope:actor.location = scope:recipient.location
+		scope:actor = {is_imprisoned = no}
+		scope:recipient = {is_imprisoned = no}
+		scope:actor.location = { has_building = lingyin_temple_01 }
+	}
+}
+
+#在日本皇宫见面
+can_talk_in_throneroom_japan = {
+	AND = {
+		scope:actor.location = scope:recipient.location
+		scope:actor = {is_imprisoned = no}
+		scope:recipient = {is_imprisoned = no}
+		scope:actor.location = { has_building = heian_palace_01 }
+	}
+}
+
+#在少林寺见面
+can_talk_in_shaolinsi = {
+	AND = {
+		scope:actor.location = scope:recipient.location
+		scope:actor = {is_imprisoned = no}
+		scope:recipient = {is_imprisoned = no}
+		scope:actor.location = { has_building = shaolin_monastery_01 }
+	}
+}
+
+#在武当山道观见面
+can_talk_in_wudangshandaoguan = {
+	AND = {
+		scope:actor.location = scope:recipient.location
+		scope:actor = {is_imprisoned = no}
+		scope:recipient = {is_imprisoned = no}
+		scope:actor.location = { has_building = wudang_mountain_temples_01 }
+	}
+}
+
+#在乐山大佛见面
+can_talk_in_leshandafou = {
+	AND = {
+		scope:actor.location = scope:recipient.location
+		scope:actor = {is_imprisoned = no}
+		scope:recipient = {is_imprisoned = no}
+		scope:actor.location = { has_building = leshan_giant_buddha_01 }
+	}
+}
+
+#在泰山见面
+can_talk_in_taishan = {
+	AND = {
+		scope:actor.location = scope:recipient.location
+		scope:actor = {is_imprisoned = no}
+		scope:recipient = {is_imprisoned = no}
+		scope:actor.location = { has_building = mount_tai_01 }
+	}
+}
+
+#在武陵源见面
+can_talk_in_wulingyuan = {
+	AND = {
+		scope:actor.location = scope:recipient.location
+		scope:actor = {is_imprisoned = no}
+		scope:recipient = {is_imprisoned = no}
+		scope:actor.location = { has_building = wulingyuan_01 }
+	}
+}
+
+#在开封皇城见面
+can_talk_in_kaifenghuangcheng = {
+	AND = {
+		scope:actor.location = scope:recipient.location
+		scope:actor = {is_imprisoned = no}
+		scope:recipient = {is_imprisoned = no}
+		scope:actor.location = { has_building = kaifeng_palace_01 }
+	}
+}
 
 #在滕王阁见面
 can_talk_in_tengwangge = {
@@ -19,7 +98,10 @@ can_talk_in_tengwangge = {
 		scope:actor = {is_imprisoned = no}
 		scope:recipient = {is_imprisoned = no}
 		#scope:actor.location.culture = { has_coa_gfx = chinese_group_coa_gfx }
-		scope:actor.location = { has_building = tengwangge }
+		OR = {
+			scope:actor.location = { has_building = tengwangge }
+			scope:actor.location = { has_building = prince_teng_pavilion_01 }
+		}
 	}
 }
 
@@ -33,6 +115,7 @@ can_talk_in_yueyanglou = {
 		OR = {
 			scope:actor.location = { has_building = yueyanglou_1 }
 			scope:actor.location = { has_building = yueyanglou_2 }
+			scope:actor.location = { has_building = yueyang_tower_01 }
 			}
 	}
 }
@@ -45,7 +128,21 @@ can_talk_in_huanghelou = {
 		scope:actor = {is_imprisoned = no}
 		scope:recipient = {is_imprisoned = no}
 		#scope:actor.location.culture = { has_coa_gfx = chinese_group_coa_gfx }
-		scope:actor.location = { has_building = huanghelou }
+		OR = {
+			scope:actor.location = { has_building = huanghelou }
+			scope:actor.location = { has_building = yellow_crane_tower_01 }
+		}
+	}
+}
+
+#在云冈石窟见面
+can_talk_in_yungangshiku = {
+	AND = {
+		scope:actor.location = scope:recipient.location
+		scope:actor = {is_imprisoned = no}
+		scope:recipient = {is_imprisoned = no}
+		#scope:actor.location.culture = { has_coa_gfx = chinese_group_coa_gfx }
+		scope:actor.location = { has_building = yungang_grottoes_01 }
 	}
 }
 
@@ -136,7 +233,7 @@ can_talk_in_throneroom_east_empire = {
 			}
 			
 		}
-		scope:recipient = {highest_held_title_tier = tier_empire}
+		scope:recipient = {highest_held_title_tier >= tier_empire}
 		scope:recipient.culture = { has_coa_gfx = chinese_group_coa_gfx }
 		scope:actor.location = scope:recipient.location
 		scope:actor = {is_imprisoned = no}
@@ -155,7 +252,7 @@ can_talk_in_throneroom_east_empire1 = {
 			}
 			
 		}
-		scope:actor = {highest_held_title_tier = tier_empire}
+		scope:actor = {highest_held_title_tier >= tier_empire}
 		scope:actor.culture = { has_coa_gfx = chinese_group_coa_gfx }
 		scope:actor.location = scope:recipient.location
 		scope:actor = {is_imprisoned = no}

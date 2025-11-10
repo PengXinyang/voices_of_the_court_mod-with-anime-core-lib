@@ -51,13 +51,100 @@ ckms_meet_interaction = {
 		#代码块4示例
 		#		if = {
 		#limit = {
-		#		scope:meet_scene_"sence_name" = yes
-		#	}
-		#	set_global_variable = {
-		#		name = meet_scene
-		#		value = flag:meet_scene_"sence_name"
-		#	}
+		#			scope:meet_scene_"sence_name" = yes
+		#		}
+		#		set_global_variable = {
+		#			name = meet_scene
+		#			value = flag:meet_scene_"sence_name"
+		#		}
 		#}
+		#在灵隐寺
+		if = {
+			limit = {
+				scope:meet_scene_lingyinsi = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_lingyinsi
+			}
+		}
+		#在日本皇宫
+		if = {
+			limit = {
+				scope:meet_scene_throneroom_japan = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_throneroom_japan
+			}
+		}
+		#在少林寺
+		if = {
+			limit = {
+				scope:meet_scene_shaolinsi = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_shaolinsi
+			}
+		}
+		#在武当山道观
+		if = {
+			limit = {
+				scope:meet_scene_wudangshandaoguan = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_wudangshandaoguan
+			}
+		}
+		#在云冈石窟
+		if = {
+			limit = {
+				scope:meet_scene_yungangshiku = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_yungangshiku
+			}
+		}
+		#在乐山大佛
+		if = {
+			limit = {
+				scope:meet_scene_leshandafou = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_leshandafou
+			}
+		}
+		if = {
+			limit = {
+				scope:meet_scene_taishan = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_taishan
+			}
+		}
+		if = {
+			limit = {
+				scope:meet_scene_wulingyuan = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_wulingyuan
+			}
+		}
+		if = {
+			limit = {
+				scope:meet_scene_kaifenghuangcheng = yes
+			}
+			set_global_variable = {
+				name = meet_scene
+				value = flag:meet_scene_kaifenghuangcheng
+			}
+		}
 		if = {
 			limit = {
 				scope:meet_scene_tengwangge = yes
@@ -227,19 +314,28 @@ ckms_meet_interaction = {
 			limit = {
 				OR = {
 					#在此段注释的下方添加_代码块5
-					#代码块5示例
-					#scope:meet_scene_"sence_name" = yes
-					scope:meet_scene_tengwangge = yes
+				#代码块5示例
+				#scope:meet_scene_"sence_name" = yes
+				scope:meet_scene_lingyinsi = yes
+				scope:meet_scene_throneroom_japan = yes
+				scope:meet_scene_shaolinsi = yes
+				scope:meet_scene_wudangshandaoguan = yes
+				scope:meet_scene_leshandafou = yes
+				scope:meet_scene_taishan = yes
+				scope:meet_scene_wulingyuan = yes
+				scope:meet_scene_kaifenghuangcheng = yes
+				scope:meet_scene_tengwangge = yes
 
 					scope:meet_scene_yueyanglou = yes
 					scope:meet_scene_huanghelou = yes
+					scope:meet_scene_yungangshiku = yes
 					scope:meet_scene_bedchamber_east1 = yes
 					scope:meet_scene_garden_east1 = yes
 					scope:meet_scene_throneroom_east_fuya = yes	
 					scope:meet_scene_throneroom_east_fuya1 = yes
 					scope:meet_scene_throneroom_east_empire1 = yes	
 					scope:meet_scene_throneroom_east_empire = yes	
-					#上方增加						
+					#上方增加					
 					scope:meet_scene_throneroom = yes
 					scope:meet_scene_garden = yes
 					scope:meet_scene_bedchamber = yes
@@ -282,6 +378,54 @@ ckms_meet_interaction = {
 	#	flag = meet_scene_"sence_name"
 	#	localization = meet_scene_"sence_name"_string
 	#}
+	#在灵隐寺
+	send_option = {
+		is_shown = {can_meet_in_lingyinsi = yes}
+		flag = meet_scene_lingyinsi
+		localization = meet_scene_lingyinsi_string
+	}
+	#在日本皇宫
+	send_option = {
+		is_shown = {can_meet_in_throneroom_japan = yes}
+		flag = meet_scene_throneroom_japan
+		localization = meet_scene_throneroom_japan_string
+	}
+#在少林寺
+	send_option = {
+		is_shown = {can_meet_in_shaolinsi = yes}
+		flag = meet_scene_shaolinsi
+		localization = meet_scene_shaolinsi_string
+	}
+#在武当山道观
+	send_option = {
+		is_shown = {can_meet_in_wudangshandaoguan = yes}
+		flag = meet_scene_wudangshandaoguan
+		localization = meet_scene_wudangshandaoguan_string
+	}
+#在乐山大佛
+	send_option = {
+		is_shown = {can_meet_in_leshandafou = yes}
+		flag = meet_scene_leshandafou
+		localization = meet_scene_leshandafou_string
+	}
+#在泰山
+	send_option = {
+		is_shown = {can_meet_in_taishan = yes}
+		flag = meet_scene_taishan
+		localization = meet_scene_taishan_string
+	}
+#在武陵源
+	send_option = {
+		is_shown = {can_meet_in_wulingyuan = yes}
+		flag = meet_scene_wulingyuan
+		localization = meet_scene_wulingyuan_string
+	}
+#在开封皇城
+	send_option = {
+		is_shown = {can_meet_in_kaifenghuangcheng = yes}
+		flag = meet_scene_kaifenghuangcheng
+		localization = meet_scene_kaifenghuangcheng_string
+	}
 #在滕王阁
 	send_option = {
 		is_shown = {can_meet_in_tengwangge = yes}
@@ -347,6 +491,12 @@ ckms_meet_interaction = {
 		is_shown = {can_meet_in_throneroom_east_empire1 = yes}
 		flag = meet_scene_throneroom_east_empire1
 		localization = meet_scene_throneroom_east_empire1_string
+	}
+	#在云冈石窟
+	send_option = {
+		is_shown = {can_meet_in_yungangshiku = yes}
+		flag = meet_scene_yungangshiku
+		localization = meet_scene_yungangshiku_string
 	}
 
 	send_option = {

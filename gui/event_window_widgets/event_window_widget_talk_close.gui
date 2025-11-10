@@ -10,6 +10,8 @@
         trigger_on_create = yes
 
 		on_start = "[ExecuteConsoleCommand('GUI.ClearWidgets talk_window talk_window_counter')]"
+
+
 	}
 
 

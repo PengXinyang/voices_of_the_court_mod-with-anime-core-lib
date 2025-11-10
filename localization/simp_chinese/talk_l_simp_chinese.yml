@@ -10,12 +10,37 @@ talk_herhim:0 "[recipient.GetHerHim]"
 #talk_scene_"scene_name"_string:0 "在scene_name见面"
 #meet_scene_"scene_name"_string:0 "在scene_name见面"
 
+talk_scene_lingyinsi_string:0 "在灵隐寺见面"
+meet_scene_lingyinsi_string:0 "在灵隐寺见面"
+
+talk_scene_throneroom_japan_string:0 "在平安宫见面"
+meet_scene_throneroom_japan_string:0 "在平安宫见面"
+
+talk_scene_shaolinsi_string:0 "在少林寺见面"
+meet_scene_shaolinsi_string:0 "在少林寺见面"
+
+talk_scene_wudangshandaoguan_string:0 "在武当山道观见面"
+meet_scene_wudangshandaoguan_string:0 "在武当山道观见面"
+
+talk_scene_leshandafou_string:0 "在乐山大佛见面"
+meet_scene_leshandafou_string:0 "在乐山大佛见面"
+
+talk_scene_taishan_string:0 "在泰山见面"
+meet_scene_taishan_string:0 "在泰山见面"
+
+talk_scene_wulingyuan_string:0 "在武陵源见面"
+meet_scene_wulingyuan_string:0 "在武陵源见面"
+
+talk_scene_kaifenghuangcheng_string:0 "在开封皇城见面"
+meet_scene_kaifenghuangcheng_string:0 "在开封皇城见面"
+
 talk_scene_tengwangge_string:0 "在滕王阁见面"
 meet_scene_tengwangge_string:0 "在滕王阁见面"
 
 meet_scene_yueyanglou_string:0 "在岳阳楼见面"
 meet_scene_huanghelou_string:0 "在黄鹤楼见面"
-meet_scene_bedchamber_east1_string:0 "在卧榻见面"
+meet_scene_yungangshiku_string:0 "在云冈石窟见面"
+meet_scene_bedchamber_east1_string:0 "在卧室见面"
 meet_scene_garden_east1_string:0 "在御花园见面"
 meet_scene_throneroom_east_fuya1_string:0 "在府衙接见"
 meet_scene_throneroom_east_fuya_string:0 "在府衙拜见"
@@ -32,7 +57,8 @@ meet_scene_alley_string:0 "在镇胡同见面"
 
 talk_scene_yueyanglou_string:0 "在岳阳楼见面"
 talk_scene_huanghelou_string:0 "在黄鹤楼见面"
-talk_scene_bedchamber_east1_string:0 "在卧榻见面"
+talk_scene_yungangshiku_string:0 "在云冈石窟见面"
+talk_scene_bedchamber_east1_string:0 "在卧室见面"
 talk_scene_garden_east1_string:0 "在御花园见面"
 talk_scene_throneroom_east_fuya1_string:0 "在府衙接见"
 talk_scene_throneroom_east_fuya_string:0 "在府衙拜见"
@@ -60,8 +86,9 @@ not_in_same_province:0 "我们不在同一个省"
 
 mcc_interaction:0 "多人谈话"
 ckms_meet_interaction:0 "三人谈话"
-ckms_meet_interaction.desc:0 "与 [recipient.GetShortUINameNoTooltip] 和另一方发起对话"
+ckms_meet_interaction.desc:0 "与 [recipient.GetShortUINameNoTooltip] 和另一方（需要先钉选）发起对话"
 recipient_secondary_ckms_meet_interaction:0 "第二受邀者"
+mcc_interaction.desc:0 "与所有在同一地点的钉选角色发起对话"
 
 invite_to_talk_interaction:0 "邀请来谈话"
 invite_to_talk_interaction.desc:0 "邀请 [recipient.GetTitledFirstName] 来谈话"
@@ -75,3 +102,12 @@ votc_family_decision_desc:0 "召开一场家族会议，所有与你在同一地
 votc_family_decision_confirm:0 "召开家族会议"
 votc_family_decision_effect:0 "你将召开一场家族会议"
 famliy_member_too_much:0 "家族成员过多（大于20）"
+
+votc_cabinet_decision_tooltip:0 "内阁会议" 
+votc_cabinet_decision_desc:0 "召开一场内阁会议，所有与你在同一地点的内阁成员都会参加"
+votc_cabinet_decision_confirm:0 "召开内阁会议"
+votc_cabinet_decision_effect:0 "你将召开一场内阁会议"
+not_enough_cabinet_member:0 "需要至少2个内阁成员与你在同一地点"
+votc_chinese_empire_cabinet_decision_desc:0 "你将召开一场中枢会议"
+votc_cabinet_decision:0 "内阁会议"
+

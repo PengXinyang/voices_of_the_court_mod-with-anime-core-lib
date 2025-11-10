@@ -26,6 +26,94 @@ mcc_event.1001 = {
 	#	trigger_event = talk_event.9001
 	#}
 
+	#在灵隐寺
+	option ={
+		name = talk_scene_lingyinsi_string
+		trigger = {can_talk_in_lingyinsi = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_lingyinsi
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在日本皇宫
+	option ={
+		name = talk_scene_throneroom_japan_string
+		trigger = {can_talk_in_throneroom_japan = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_throneroom_japan
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在少林寺
+	option ={
+		name = talk_scene_shaolinsi_string
+		trigger = {can_talk_in_shaolinsi = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_shaolinsi
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在武当山道观
+	option ={
+		name = talk_scene_wudangshandaoguan_string
+		trigger = {can_talk_in_wudangshandaoguan = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_wudangshandaoguan
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在乐山大佛
+	option ={
+		name = talk_scene_leshandafou_string
+		trigger = {can_talk_in_leshandafou = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_leshandafou
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在泰山
+	option ={
+		name = talk_scene_taishan_string
+		trigger = {can_talk_in_taishan = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_taishan
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在武陵源
+	option ={
+		name = talk_scene_wulingyuan_string
+		trigger = {can_talk_in_wulingyuan = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_wulingyuan
+			}
+		trigger_event = talk_event.9001
+	}
+
+	#在开封皇城
+	option ={
+		name = talk_scene_kaifenghuangcheng_string
+		trigger = {can_talk_in_kaifenghuangcheng = yes}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_kaifenghuangcheng
+			}
+		trigger_event = talk_event.9001
+	}
+
 	#在滕王阁
 	option ={
 		name = talk_scene_tengwangge_string
@@ -54,10 +142,22 @@ mcc_event.1001 = {
 	option ={
 		name = talk_scene_huanghelou_string
 		trigger = {can_talk_in_huanghelou = yes}
-		
+	
 			set_global_variable = {
 				name = talk_scene
 				value = flag:talk_scene_huanghelou
+			}
+		trigger_event = talk_event.9001
+	}	
+	
+	#在云冈石窟
+	option ={
+		name = talk_scene_yungangshiku_string
+		trigger = {can_talk_in_yungangshiku = yes}
+	
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_yungangshiku
 			}
 		trigger_event = talk_event.9001
 	}	
@@ -269,6 +369,7 @@ mcc_event.9002 = {
 	
 	immediate = {
 		remove_global_variable = talk_pose
+		remove_global_variable = meet_scene
 	}
 }
 

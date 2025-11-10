@@ -25,6 +25,7 @@ log_new_relations = {
 			if = {
 				limit = {
 					is_at_same_location = scope:talk_first_scope
+					is_imprisoned = no
 					NOT = { this = scope:mcc_tmp_char }
 				}
 				scope:mcc_tmp_char = {
@@ -39,10 +40,11 @@ log_new_relations = {
 log_opinions = {
 	save_scope_as = mcc_tmp_char
 	scope:talk_first_scope = {
-		every_pinned_character = {
+		every_house_member = {
 			if = {
 				limit = {
 					is_at_same_location = scope:talk_first_scope
+					is_imprisoned = no
 					NOT = { this = scope:mcc_tmp_char }
 				}
 				scope:mcc_tmp_char = {

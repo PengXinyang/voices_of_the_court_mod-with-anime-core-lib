@@ -41,6 +41,93 @@ talk_interaction = {
 	#			value = flag:talk_scene_"sence_name"
 	#		}
 	#	}
+	#在灵隐寺
+	if = {
+		limit = {
+			scope:talk_scene_lingyinsi = yes
+		}
+		set_global_variable = {
+			name = talk_scene
+			value = flag:talk_scene_lingyinsi
+		}
+	}
+	#在日本皇宫
+		if = {
+			limit = {
+				scope:talk_scene_throneroom_japan = yes
+			}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_throneroom_japan
+			}
+		}
+	#在少林寺
+		if = {
+			limit = {
+				scope:talk_scene_shaolinsi = yes
+			}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_shaolinsi
+			}
+		}
+		#在武当山道观
+		if = {
+			limit = {
+				scope:talk_scene_wudangshandaoguan = yes
+			}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_wudangshandaoguan
+			}
+		}
+		#在云冈石窟
+		if = {
+			limit = {
+				scope:talk_scene_yungangshiku = yes
+			}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_yungangshiku
+			}
+		}
+		#在乐山大佛
+		if = {
+			limit = {
+				scope:talk_scene_leshandafou = yes
+			}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_leshandafou
+			}
+		}
+		if = {
+			limit = {
+				scope:talk_scene_taishan = yes
+			}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_taishan
+			}
+		}
+		if = {
+			limit = {
+				scope:talk_scene_wulingyuan = yes
+			}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_wulingyuan
+			}
+		}
+		if = {
+			limit = {
+				scope:talk_scene_kaifenghuangcheng = yes
+			}
+			set_global_variable = {
+				name = talk_scene
+				value = flag:talk_scene_kaifenghuangcheng
+			}
+		}
 		if = {
 			limit = {
 				scope:talk_scene_tengwangge = yes
@@ -211,6 +298,15 @@ talk_interaction = {
 				OR = {
 					#在此段注释的下方添加_代码块8
 					#代码块8示例scope:talk_scene_"sence_name" = yes
+					scope:talk_scene_lingyinsi = yes
+					scope:talk_scene_throneroom_japan = yes
+					scope:talk_scene_shaolinsi = yes
+					scope:talk_scene_wudangshandaoguan = yes
+					scope:talk_scene_yungangshiku = yes
+					scope:talk_scene_leshandafou = yes
+					scope:talk_scene_taishan = yes
+					scope:talk_scene_wulingyuan = yes
+					scope:talk_scene_kaifenghuangcheng = yes
 					scope:talk_scene_tengwangge = yes
 					scope:talk_scene_yueyanglou = yes
 					scope:talk_scene_huanghelou = yes
@@ -262,6 +358,54 @@ talk_interaction = {
 	#	flag = talk_scene_"sence_name"
 	#	localization = talk_scene_"sence_name"_string
 	#}
+	#在灵隐寺
+	send_option = {
+		is_shown = {can_talk_in_lingyinsi = yes}
+		flag = talk_scene_lingyinsi
+		localization = talk_scene_lingyinsi_string
+	}
+	#在日本皇宫
+	send_option = {
+		is_shown = {can_talk_in_throneroom_japan = yes}
+		flag = talk_scene_throneroom_japan
+		localization = talk_scene_throneroom_japan_string
+	}
+	#在少林寺
+	send_option = {
+		is_shown = {can_talk_in_shaolinsi = yes}
+		flag = talk_scene_shaolinsi
+		localization = talk_scene_shaolinsi_string
+	}
+	#在武当山道观
+	send_option = {
+		is_shown = {can_talk_in_wudangshandaoguan = yes}
+		flag = talk_scene_wudangshandaoguan
+		localization = talk_scene_wudangshandaoguan_string
+	}
+	#在乐山大佛
+	send_option = {
+		is_shown = {can_talk_in_leshandafou = yes}
+		flag = talk_scene_leshandafou
+		localization = talk_scene_leshandafou_string
+	}
+	#在泰山
+	send_option = {
+		is_shown = {can_talk_in_taishan = yes}
+		flag = talk_scene_taishan
+		localization = talk_scene_taishan_string
+	}
+	#在武陵源
+	send_option = {
+		is_shown = {can_talk_in_wulingyuan = yes}
+		flag = talk_scene_wulingyuan
+		localization = talk_scene_wulingyuan_string
+	}
+	#在开封皇城
+	send_option = {
+		is_shown = {can_talk_in_kaifenghuangcheng = yes}
+		flag = talk_scene_kaifenghuangcheng
+		localization = talk_scene_kaifenghuangcheng_string
+	}
 	#在滕王阁
 	send_option = {
 		is_shown = {can_talk_in_tengwangge = yes}
@@ -281,6 +425,12 @@ talk_interaction = {
 		is_shown = {can_talk_in_huanghelou = yes}
 		flag = talk_scene_huanghelou
 		localization = talk_scene_huanghelou_string
+	}
+	#在云冈石窟
+	send_option = {
+		is_shown = {can_talk_in_yungangshiku = yes}
+		flag = talk_scene_yungangshiku
+		localization = talk_scene_yungangshiku_string
 	}
 	#在卧室
 	send_option = {

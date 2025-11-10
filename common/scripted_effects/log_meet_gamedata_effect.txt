@@ -2,7 +2,7 @@
 #scope:recipient = character the player wants to talk to
 log_meet_gamedata = {
 
-	debug_log = "VOTC:IN/;/init/;/[GetPlayer.GetID]/;/[GetPlayer.GetTitledFirstName]/;/[recipient.GetID]/;/[recipient.GetTitledFirstName]/;/[secondary_recipient.GetID]/;/[secondary_recipient.GetTitledFirstName]/;/[GetCurrentDate.GetStringShort]/;/[GetGlobalVariable('meet_scene').GetFlagName]/;/[recipient.GetCurrentLocation.GetName]/;/[recipient.GetCurrentLocation.GetController.GetFullNameNicknamedNoTooltipRegnal]/;/[secondary_recipient.GetCurrentLocation.GetName]/;/[secondary_recipient.GetCurrentLocation.GetController.GetFullNameNicknamedNoTooltipRegnal]"
+	debug_log = "VOTC:IN/;/init/;/[GetPlayer.GetID]/;/[GetPlayer.GetTitledFirstName]/;/[recipient.GetID]/;/[recipient.GetTitledFirstName]/;/[GetCurrentDate.GetStringShort]/;/[GetGlobalVariable('meet_scene').GetFlagName]/;/[recipient.GetCurrentLocation.GetName]/;/[recipient.GetCurrentLocation.GetController.GetFullNameNicknamedNoTooltipRegnal]"
 
 	debug_log = log_character_header
 	
